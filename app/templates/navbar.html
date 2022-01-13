@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" style="background-color:#000000; border: transparent;">
+        <div class="container-fluid">
+            <h1 style="color: #F2AA4CFF;margin-right: 25%;">Neighbourhood</h1>
+            <div class="navbar-header">
+
+            </div>
+            <div class="navbar-options" style="margin-left: 300px;">
+                <a class="navbar-brand" href="#" style=" text-decoration: none;"></a>
+                {% if user.is_authenticated %}
+                <a class="navbar-brand" href="{% url 'home' %}" style=" text-decoration: none;color: #F2AA4CFF;">home</a>
+                <a class="navbar-brand" href="{% url 'logout' %}" style=" text-decoration: none;color: #F2AA4CFF;">logout</a> {% else %}
+                <a class="navbar-brand" href="{% url 'register' %}" style=" text-decoration: none;color: #F2AA4CFF;">Sign In</a>
+                <a class="navbar-brand" href="{% url 'login' %}" style=" text-decoration: none;color: #F2AA4CFF;">Login</a> {% endif %}
+
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
