@@ -14,6 +14,7 @@ from pathlib import Path
 import os 
 import django_heroku
 import cloudinary
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -112,6 +113,12 @@ DATABASES = {
     'PASSWORD':'li',
     }
 }
+
+cloudinary.config(
+  cloud_name = config('CLOUDINARY_NAME'),
+  api_key = config('CLOUDINARY_API_KEY'),
+  api_secret = config('CLOUDINARY_SECRET')
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
